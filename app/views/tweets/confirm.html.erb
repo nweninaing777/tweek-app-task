@@ -1,0 +1,12 @@
+
+<h3>Make sure  tweet before submitting.</h3>
+
+<%= form_with(model: @tweet, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>content:<%= @tweet.content %></p>
+  <%= form.submit  "Submit" %>
+
+  <%= form.submit "Back", name: 'back' %>
+
+<% end %>

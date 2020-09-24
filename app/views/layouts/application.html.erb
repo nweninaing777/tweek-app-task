@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Switter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+        <a class="logo-new" href="#"><img alt="Tweet Logo" src="/assets/ai_computer_sousa_thumbnail2.png"　width="100%" height="100%"></a>
+        <%= link_to("Tweet", tweets_path, {class: "logo"})%>
+      </header>
+    <%= yield %>
+     <footer>
+        <p>運営会社Tweet株式会社</p>
+        <p>© 2020-2021 Copyright Tweet Corp.</p>
+      </footer>
+  </body>
+</html>

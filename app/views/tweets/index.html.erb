@@ -1,0 +1,23 @@
+
+<h1>Tweet Lists</h1>
+
+<p><%= notice %></p>
+
+<table class="table-hover">
+  <tr>
+    <th>Content</th>
+  </tr>
+<% @tweets.each do |tweet| %>
+<body>
+  <tr>
+    <th><%= tweet.content %></th>
+    <td><button type="button" class="checkdetails"><%= link_to 'View more details', tweet_path(tweet.id) %></button></td>
+    <td><button type="button" class="edittweet"><%= link_to "Edit tweet", edit_tweet_path(tweet.id) ,data: { confirm: 'Are you sure to edit？' }%></button></td>
+    <td><button type="button" class="deletetweet"><%= link_to 'Delete tweet', tweet_path(tweet.id), method: :delete ,data: { confirm: 'Are you sure to delete？' } %></button></td>
+  </tr>
+</body>
+<% end %>
+</table>
+<br>
+
+<%= link_to("Create a new tweet!", new_tweet_path, {class: "btn-create"}) %>
